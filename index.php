@@ -9,7 +9,7 @@
 if(version_compare(PHP_VERSION,'5.5.0','<'))  die('PHP版本过低，最少需要PHP5.5，请升级PHP版本！');
 
 //定义项目的根目录
-Define("ROOT_PATH",__DIR__);
+Define('ROOT_PATH',__DIR__.'/');
 
 //引用初始化文件
-require ROOT_PATH.'/lib/start.php';
+require ROOT_PATH.'lib/start.php';
