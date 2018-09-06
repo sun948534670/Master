@@ -5,11 +5,6 @@
 // | Author: Chengzhi Sun <948534670@qq.com>
 // +----------------------------------------------------------------------
 
-//环境检查
-if(version_compare(PHP_VERSION,'5.5.0','<'))  die('PHP版本过低，最少需要PHP5.5，请升级PHP版本！');
+//程序起始文件
 
-//定义项目的根目录
-Define("ROOT_PATH",__DIR__);
-
-//引用初始化文件
-require ROOT_PATH.'/lib/start.php';
+//定义基础常量
