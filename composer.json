@@ -1,0 +1,13 @@
+{
+    "name": "Chengzhi Sun/master",
+    "description": "Just a lite PHP framework",
+    "require": {
+        "monolog/monolog": "^1.23"
+    },
+    "authors": [
+        {
+            "name": "Chengzhi Sun",
+            "email": "948534670@qq.com"
+        }
+    ]
+}
