@@ -2,7 +2,8 @@
     "name": "Chengzhi Sun/master",
     "description": "Just a lite PHP framework",
     "require": {
-        "monolog/monolog": "^1.23"
+        "monolog/monolog": "^1.23",
+        "smarty/smarty": "^3.1"
     },
     "authors": [
         {
