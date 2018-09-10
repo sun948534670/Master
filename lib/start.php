@@ -4,7 +4,7 @@
 // +----------------------------------------------------------------------
 // | Author: Chengzhi Sun <948534670@qq.com>
 // +----------------------------------------------------------------------
-
+use master\lib\App;
 //程序起始文件
 
 //定义基础常量
@@ -17,12 +17,14 @@ Define('DATA_PATH',ROOT_PATH.'/data/'); //定义app目录
 //加载Vendor目录
 require VENDOR_PATH.'autoload.php';
 //加载自动加载文件
-require LIB_PATH.'autoload.php';
+require LIB_PATH.'App.php';
+//运行代码实例
+$app = new App();
+$app->run();
 
-//路由规则
-$controller_name = isset($_GET['c'])?$_GET['c']:'index';
-$action_name = isset($_GET['a'])?$_GET['a']:'index';
+////路由规则
 
-//实例化并调用相关方法
-$controller = new $controller_name();
-$controller->$action_name();
+
+////实例化并调用相关方法
+//$controller = new $controller_name();
+//$controller->$action_name();

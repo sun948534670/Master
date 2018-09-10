@@ -7,7 +7,7 @@
  * Time: 14:03
  */
 
-Class Index{
+Class IndexController{
 
     public function __construct()
     {
