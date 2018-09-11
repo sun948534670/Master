@@ -21,10 +21,3 @@ require LIB_PATH.'App.php';
 //运行代码实例
 $app = new App();
 $app->run();
-
-////路由规则
-
-
-////实例化并调用相关方法
-//$controller = new $controller_name();
-//$controller->$action_name();

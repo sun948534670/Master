@@ -7,14 +7,15 @@
  * Time: 14:03
  */
 
-Class IndexController{
+Class IndexController extends BaseController {
 
     public function __construct()
     {
-
+        //调用父类构造方法
+        parent::__construct();
     }
 
     public function index(){
-        echo 'hello world';
+        $this->display('index.tpl');
     }
 }

@@ -27,7 +27,8 @@ Class App{
         //定义内部基础类库
         $baseClass = array(
             'master\lib\Config' =>LIB_PATH.'Config.php',//配置项类库,
-            'master\lib\Request'=>LIB_PATH.'Request.php'//配置请求库
+            'master\lib\Request'=>LIB_PATH.'Request.php',//配置请求库
+            'master\lib\Smarty'=>LIB_PATH.'Smarty.php'//Smarty模板引擎
         );
 
         //引用内部基础类库
