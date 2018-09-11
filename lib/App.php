@@ -24,8 +24,8 @@ Class App{
     }
 
     //核心自动加载方法
+    //TODO::待完善 需要考虑全局加载
     private function autoLoad($class_name){
-
         switch (self::getNameSpace($class_name)){
             case 'master\lib\\':
                 require_once LIB_PATH.self::getControllerName($class_name).'.php';
@@ -33,11 +33,21 @@ Class App{
             case 'master\app\model\\':
                 require_once APP_PATH.'model/'.self::getControllerName($class_name).'.php';
                 break;
+            case 'master\lib\engine\\':
+                require_once LIB_PATH.'engine/'.self::getControllerName($class_name).'.php';
+                break;
             default:
-                require_once APP_PATH.'controller/'.ucfirst($class_name).'.php';
+                $this->loadOther($class_name);
             break;
         }
+    }
 
+    private function loadOther($class_name){
+        if(strpos($class_name,'Controller')){
+            require_once APP_PATH.'controller/'.ucfirst($class_name).'.php';
+        }elseif($class_name == 'Mysql'){
+            require_once LIB_PATH.'engine/'.ucfirst($class_name).'.php';
+        }
     }
 
     //注册自动加载函数

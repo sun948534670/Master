@@ -9,7 +9,12 @@
  */
 
 namespace master\app\model;
+use master\lib\Db;
+
 class BaseModel
 {
+    public function __construct()
+    {
 
+    }
 }

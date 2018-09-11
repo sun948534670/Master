@@ -7,8 +7,10 @@
  * Time: 14:24
  */
 return [
+    //驱动类型
+    'dbdriver'        => 'Mysql',
     // 服务器地址
-    'hostname'        => '127.0.0.1',
+    'hostname'        => '127.1.0.1',
     // 数据库名
     'database'        => '',
     // 用户名

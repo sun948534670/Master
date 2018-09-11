@@ -19,4 +19,6 @@ Class IndexController extends BaseController {
     public function index(){
         $index_model = new IndexModel();
     }
+
+
 }
