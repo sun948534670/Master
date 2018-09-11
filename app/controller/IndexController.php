@@ -6,6 +6,7 @@
  * Date: 2018/9/6 0006
  * Time: 14:03
  */
+use master\app\model\IndexModel;
 
 Class IndexController extends BaseController {
 
@@ -16,6 +17,6 @@ Class IndexController extends BaseController {
     }
 
     public function index(){
-        $this->display('index.tpl');
+        $index_model = new IndexModel();
     }
 }

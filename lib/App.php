@@ -23,21 +23,19 @@ Class App{
         $this->dispath();
     }
 
+    //核心自动加载方法
     private function autoLoad($class_name){
-        //定义内部基础类库
-        $baseClass = array(
-            'master\lib\Config' =>LIB_PATH.'Config.php',//配置项类库,
-            'master\lib\Request'=>LIB_PATH.'Request.php',//配置请求库
-            'master\lib\Smarty'=>LIB_PATH.'Smarty.php'//Smarty模板引擎
-        );
 
-        //引用内部基础类库
-        if(isset($baseClass[$class_name])){
-            require_once $baseClass[$class_name];
-        }else{
-            $class_name = self::getControllerName($class_name);
-            //引用Controller层
-            require_once APP_PATH.'controller/'.ucfirst($class_name).'.php';
+        switch (self::getNameSpace($class_name)){
+            case 'master\lib\\':
+                require_once LIB_PATH.self::getControllerName($class_name).'.php';
+                break;
+            case 'master\app\model\\':
+                require_once APP_PATH.'model/'.self::getControllerName($class_name).'.php';
+                break;
+            default:
+                require_once APP_PATH.'controller/'.ucfirst($class_name).'.php';
+            break;
         }
 
     }
@@ -79,4 +77,7 @@ Class App{
        return end(explode("\\",$origin));
     }
 
+    private function getNameSpace($origin){
+        return str_replace(end(explode("\\",$origin)),'',$origin);
+    }
 }
