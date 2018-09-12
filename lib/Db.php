@@ -43,7 +43,7 @@ Class Db{
         self::$engine = new Mysql();
     }
 
-    public function getInstance(){
+    public static function getInstance(){
         if(!self::$instance instanceof self){
             self::$instance = new self();
         }
@@ -52,6 +52,10 @@ Class Db{
 
     public function connect(){
         self::$engine->connect(self::$hostname,self::$username,self::$password);
+    }
+
+    public function selectDb(){
+        self::$engine->selectDb(self::$database);
     }
 
     public function query($sql){

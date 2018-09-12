@@ -12,7 +12,7 @@ return [
     // 服务器地址
     'hostname'        => '127.1.0.1',
     // 数据库名
-    'database'        => '',
+    'database'        => 'shipin',
     // 用户名
     'username'        => 'root',
     // 密码

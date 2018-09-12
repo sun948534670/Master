@@ -13,6 +13,9 @@ interface DbEngine
     //连接数据库操作
     public function connect($host,$username,$password);
 
+    //选择数据库
+    public function selectDb($db_name);
+
     //更新
     public function update();
 

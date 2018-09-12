@@ -18,6 +18,7 @@ Class IndexController extends BaseController {
 
     public function index(){
         $index_model = new IndexModel();
+        var_dump($index_model->getAll());
     }
 
 

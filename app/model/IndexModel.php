@@ -12,4 +12,7 @@ namespace  master\app\model;
 
 Class IndexModel extends BaseModel{
 
+    public function getAll(){
+        return $this->db->query("select * from honor");
+    }
 }

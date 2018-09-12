@@ -18,6 +18,11 @@ class Mysql implements DbEngine
         $this->connect = mysql_connect($host,$username,$password);
     }
 
+    public function selectDb($db_name)
+    {
+        mysql_select_db($db_name,$this->connect);
+    }
+
     public function select()
     {
         // TODO: Implement select() method.
@@ -42,4 +47,5 @@ class Mysql implements DbEngine
     {
        return mysql_query($sql);
     }
+
 }
