@@ -13,9 +13,12 @@ namespace master\lib\engine;
 class Mysql implements DbEngine
 {
     public $connect ;
-    public function connect($host,$username,$password)
+
+    public function connect($host,$username,$password,$charset='utf8')
     {
         $this->connect = mysql_connect($host,$username,$password);
+        //自动设置编码格式
+        self::setCharset($charset);
     }
 
     public function selectDb($db_name)
@@ -45,7 +48,24 @@ class Mysql implements DbEngine
 
     public function query($sql)
     {
-       return mysql_query($sql);
+       return $this->toArray(mysql_query($sql));
     }
+
+    private function toArray($query,$array_type = MYSQL_ASSOC){
+        $result = array();
+        while ($row = mysql_fetch_array($query,$array_type)){
+            $result[] = $row;
+        }
+        return $result;
+    }
+
+    public function affectRows(){
+        return mysql_affected_rows();
+    }
+
+    public static function setCharset($charset){
+        mysql_query("set names '{$charset}'");
+    }
+
 
 }

@@ -17,6 +17,8 @@ Class Db{
 
     private static $engine = null;//数据库驱动实例
 
+    private static $charset = 'utf8';//数据库编码
+
     private static $hostname = '';
 
     private static $database = '';
@@ -51,7 +53,7 @@ Class Db{
     }
 
     public function connect(){
-        self::$engine->connect(self::$hostname,self::$username,self::$password);
+        self::$engine->connect(self::$hostname,self::$username,self::$password,self::$charset);
     }
 
     public function selectDb(){

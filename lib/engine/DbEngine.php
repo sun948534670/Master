@@ -11,7 +11,7 @@ namespace master\lib\engine;
 interface DbEngine
 {
     //连接数据库操作
-    public function connect($host,$username,$password);
+    public function connect($host,$username,$password,$charset);
 
     //选择数据库
     public function selectDb($db_name);
