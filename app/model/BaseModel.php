@@ -14,6 +14,7 @@ use master\lib\Db;
 class BaseModel
 {
     protected $db;
+
     public function __construct()
     {
         $this->db = Db::getInstance();

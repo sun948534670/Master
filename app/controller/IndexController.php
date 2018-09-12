@@ -18,7 +18,9 @@ Class IndexController extends BaseController {
 
     public function index(){
         $index_model = new IndexModel();
-        var_dump($index_model->getAll());
+        $result = $index_model ->getAll();
+        $this->assign('result',$result);
+        $this->display('index/index.tpl');
     }
 
 
